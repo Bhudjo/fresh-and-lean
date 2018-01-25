@@ -4,10 +4,12 @@ case class Cart(items: Map[String, Int]) {
   val namesToPrices = Map(
     "Bananas" -> 150,
     "Apples" -> 100,
+    "Pommes" -> 100,
+    "Mele" -> 100,
     "Cherries" -> 75)
 
   val discounts = Map(
-    "Cherries" -> (2, 30),
+    "Cherries" -> (2, 20),
     "Bananas" -> (2, 150)
   )
 
