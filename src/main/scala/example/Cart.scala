@@ -12,7 +12,7 @@ case class Cart(items: Map[String, Int]) {
     "Cherries" -> (2, 20),
     "Bananas" -> (2, 150),
     "Pommes" -> (3, 100),
-    "Mele" -> (2, 50)
+    "Mele" -> (2, 100)
   )
 
 
