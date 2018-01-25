@@ -7,7 +7,8 @@ case class Cart(items: Map[String, Int]) {
     "Cherries" -> 75)
 
   val discounts = Map(
-    "Cherries" -> (2, 20)
+    "Cherries" -> (2, 30),
+    "Bananas" -> (2, 150)
   )
 
 
