@@ -8,15 +8,17 @@ class CartSpec extends WordSpec with Matchers {
       val cart = Cart.empty
       cart.addProduct("Bananas").total shouldEqual 150
     }
-    "acceptance test iteration four" in {
+    "acceptance test iteration five" in {
       Cart.empty
-        .addProduct("Cherries")
+        .addProduct("Mele")
         .addProduct("Pommes")
-        .addProduct("Cherries")
-        .addProduct("Bananas")
-        .addProduct("Bananas")
+        .addProduct("Pommes")
         .addProduct("Apples")
-        .total shouldEqual 480
+        .addProduct("Pommes")
+        .addProduct("Mele")
+        .addProduct("Cherries")
+        .addProduct("Cherries")
+        .total shouldEqual 580
     }
   }
 }
