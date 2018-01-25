@@ -12,12 +12,16 @@ case class Cart(items: Map[String, Int]) {
 
 
   def total: Int = {
-    val discount = items.map{ case (n, q) => {
-      val (quant,disc) = discounts.getOrElse(n,(0,0))
-      if(q >= quant) disc else 0
-    }}.sum
+    val discount = calculateCartDiscount
     val total = items.map { case (n, q) => namesToPrices.getOrElse(n, 0) * q }.sum
     total - discount
+  }
+
+  private def calculateCartDiscount = {
+    items.map { case (itemName, quantityInCart) =>
+      val (quantityToGetDiscount, discountValue) = discounts.getOrElse(itemName, (0, 0))
+      if (quantityInCart >= quantityToGetDiscount) discountValue else 0
+    }.sum
   }
 
   def addProduct(productName: String): Cart = {
